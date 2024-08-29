@@ -1,0 +1,6 @@
+Plotly
+Seaborn
+Pandas 
+Pymongo 
+Streamlit
+streamlit_option_menu
