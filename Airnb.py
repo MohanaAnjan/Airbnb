@@ -5,6 +5,7 @@ import streamlit as st
 import plotly.express as px
 from streamlit_option_menu import option_menu
 from PIL import Image
+import os
 
 # Setting up page configuration
 #icon = Image.open("ICN.png")
@@ -31,7 +32,14 @@ db = client.sample_airbnb
 col = db.listingsAndReviews
 
 # READING THE CLEANED DATAFRAME
-df = pd.read_csv('D:/My Projects/Airnb Project/airnb_csv')
+import os
+file_path = 'airnb_csv'
+if os.path.exists(file_path):
+    df = pd.read_csv(file_path)
+else:
+    print(f"File not found: {file_path}")
+
+#df = pd.read_csv('D:/My Projects/Airnb Project/airnb_csv')
 
 # HOME PAGE
 if selected == "Home":
